@@ -1,4 +1,9 @@
 services:
+  zipkin:
+    image: openzipkin/zipkin-slim:${TAG:-latest}
+    container_name: zipkin
+    ports:
+      - "9411:9411"
   postgres:
     container_name: postgres
     image: postgres:14.9
